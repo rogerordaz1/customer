@@ -1,5 +1,7 @@
+import 'package:app/core/utils/botton_sheets/botton_sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:tabler_icons/tabler_icons.dart';
 
 class EventActionButtonWidget extends StatelessWidget {
@@ -41,7 +43,8 @@ class EventActionButtonWidget extends StatelessWidget {
       children: [
         OutlinedButton(
           style: styleOutlineButton,
-          onPressed: () {},
+          onPressed: () =>
+              BottonSheets.showEventDetailBottomSheet(context: context),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

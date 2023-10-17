@@ -7,10 +7,12 @@ class AuthorImgAndName extends StatelessWidget {
     super.key,
     required this.authorImg,
     required this.authorName,
+    this.isIconShowing = true,
   });
 
   final String authorImg;
   final String authorName;
+  final bool? isIconShowing;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +41,10 @@ class AuthorImgAndName extends StatelessWidget {
           ],
         ),
         //? Revisar despues que se va a hacer con los 3 punticos..
-        const Icon(
-          TablerIcons.dots_vertical,
-        )
+        if (isIconShowing == true)
+          const Icon(
+            TablerIcons.dots_vertical,
+          )
       ],
     );
   }

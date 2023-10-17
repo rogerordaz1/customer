@@ -4,9 +4,8 @@ import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 
 import 'package:get/get.dart';
 
-
 import 'home_controller.dart';
-import 'widgets/custom_navbar.dart';
+import 'widgets/custom_navbar/custom_navbar.dart';
 import 'widgets/widgets.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -16,25 +15,25 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     FlutterStatusbarcolor.setStatusBarColor(Colors.black);
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(238, 238, 238, 1),
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
         child: Stack(
           children: [
-            Padding(
-              padding: EdgeInsets.only(top: 60.h),
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                children: [
-                  const EventCard(),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  const EventCard(),
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                ],
-              ),
+            ListView(
+              physics: const BouncingScrollPhysics(),
+              children: [
+                SizedBox(
+                  height: 60.h,
+                ),
+                const EventCard(),
+                SizedBox(
+                  height: 10.h,
+                ),
+                const EventCard(),
+                SizedBox(
+                  height: 60.h,
+                ),
+              ],
             ),
             const CustomAppBar(),
           ],

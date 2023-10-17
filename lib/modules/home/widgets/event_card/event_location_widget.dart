@@ -34,6 +34,7 @@ class EventLocationWidget extends StatelessWidget {
           width: 8.w,
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               title,

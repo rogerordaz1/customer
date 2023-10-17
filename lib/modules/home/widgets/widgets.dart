@@ -9,3 +9,7 @@ export './event_card/event_date_and_time_widget.dart';
 export './event_card/event_location_widget.dart';
 
 export './event_card/event_actions_buttons_widgets.dart';
+
+export './event_detail_sheet/event_details_widget.dart';
+
+export './event_detail_sheet/draggable_indicator.dart';
