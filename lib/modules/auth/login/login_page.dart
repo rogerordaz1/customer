@@ -1,3 +1,5 @@
+import 'package:app/modules/home/home_routes.dart';
+import 'package:app/modules/layout/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
@@ -28,7 +30,10 @@ class LoginPage extends GetView<LoginController> {
                 SizedBox(height: 80.h),
                 const LoginFields(),
                 SizedBox(height: 100.h),
-                const CustomLoginButtoms(hintext: 'Acceder', ispraimary: true),
+                CustomLoginButtoms(
+                    onTap: () => Get.toNamed(LayoutRoutes.name),
+                    hintext: 'Acceder',
+                    ispraimary: true),
                 SizedBox(height: 8.h),
                 const CustomLoginButtoms(
                     hintext: 'Crear una cuenta', ispraimary: false),
