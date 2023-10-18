@@ -38,6 +38,7 @@ class EventDateAndTimeWidget extends StatelessWidget {
             color: const Color.fromRGBO(238, 238, 238, 1),
           ),
           child: const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "\$50.00",
@@ -76,13 +77,13 @@ class DateAndTimeWidgetItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text(
+        Text(
           "16",
           style: TextStyle(
             fontFamily: "Roboto",
-            fontSize: 28,
+            fontSize: 26.sp,
             fontWeight: FontWeight.w400,
-            color: Color(0xff0e6bf0),
+            color: const Color(0xff0e6bf0),
           ),
           textAlign: TextAlign.left,
         ),

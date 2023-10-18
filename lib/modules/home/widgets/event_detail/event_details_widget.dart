@@ -54,41 +54,11 @@ class EventDetailsWidget extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
           SizedBox(height: 12.h),
-          FilledButton(
-            style: ButtonStyle(
-              padding: MaterialStatePropertyAll(
-                  EdgeInsets.symmetric(horizontal: 28.w, vertical: 6.h)),
-              backgroundColor:
-                  const MaterialStatePropertyAll(Color(0xff0E6BF0)),
-              alignment: Alignment.center,
-              shape: MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
-            onPressed: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(TablerIcons.ticket),
-                SizedBox(
-                  width: 8.w,
-                ),
-                const Text(
-                  "Reservar",
-                  style: TextStyle(
-                    fontFamily: "Roboto",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                )
-              ],
-            ),
-          )
+          const CheckInButton(),
         ],
       ),
     );
   }
 }
+
+
