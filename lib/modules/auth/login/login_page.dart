@@ -1,4 +1,4 @@
-import 'package:app/modules/home/home_routes.dart';
+import 'package:app/modules/auth/register/register_routes.dart';
 import 'package:app/modules/layout/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,8 +35,11 @@ class LoginPage extends GetView<LoginController> {
                     hintext: 'Acceder',
                     ispraimary: true),
                 SizedBox(height: 8.h),
-                const CustomLoginButtoms(
-                    hintext: 'Crear una cuenta', ispraimary: false),
+                CustomLoginButtoms(
+                  hintext: 'Crear una cuenta',
+                  ispraimary: false,
+                  onTap: () => Get.toNamed(RegisterRoutes.register),
+                ),
               ],
             ),
           ),
