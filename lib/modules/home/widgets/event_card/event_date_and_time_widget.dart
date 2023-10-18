@@ -13,7 +13,7 @@ class EventDateAndTimeWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          padding: EdgeInsets.symmetric(horizontal: 2.w),
           width: 175.w,
           height: 30.h,
           decoration: const BoxDecoration(
@@ -33,9 +33,9 @@ class EventDateAndTimeWidget extends StatelessWidget {
         Container(
           width: 50.w,
           height: 30.h,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Color.fromRGBO(238, 238, 238, 1),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
+            color: const Color.fromRGBO(238, 238, 238, 1),
           ),
           child: const Column(
             children: [
@@ -46,7 +46,6 @@ class EventDateAndTimeWidget extends StatelessWidget {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: Color(0xff0e6bf0),
-                  height: 20 / 14,
                 ),
                 textAlign: TextAlign.left,
               ),
@@ -57,7 +56,6 @@ class EventDateAndTimeWidget extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                   color: Color(0xff848484),
-                  height: 16 / 12,
                 ),
                 textAlign: TextAlign.left,
               )
@@ -74,9 +72,6 @@ class DateAndTimeWidgetItem extends StatelessWidget {
     super.key,
   });
 
-  
-
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -88,7 +83,6 @@ class DateAndTimeWidgetItem extends StatelessWidget {
             fontSize: 28,
             fontWeight: FontWeight.w400,
             color: Color(0xff0e6bf0),
-            height: 36 / 28,
           ),
           textAlign: TextAlign.left,
         ),
@@ -104,7 +98,6 @@ class DateAndTimeWidgetItem extends StatelessWidget {
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
                 color: Color(0xff000000),
-                height: 16 / 12,
               ),
               textAlign: TextAlign.left,
             ),
@@ -115,7 +108,6 @@ class DateAndTimeWidgetItem extends StatelessWidget {
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: Color(0xff848484),
-                height: 16 / 12,
               ),
               textAlign: TextAlign.left,
             )
