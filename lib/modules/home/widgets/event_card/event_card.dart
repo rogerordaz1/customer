@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,27 +17,27 @@ class EventCard extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 16.w),
           height: 300.h,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
+          decoration: BoxDecoration(
+            image: const DecorationImage(
               image: AssetImage(
                 'assets/image1.png',
               ),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
+              topLeft: Radius.circular(12.r),
+              topRight: Radius.circular(12.r),
             ),
           ),
         ),
         Container(
           margin: EdgeInsets.symmetric(horizontal: 16.w),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          height: 190.h,
-          decoration: const BoxDecoration(
+          height: 194.h,
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(12),
-              bottomRight: Radius.circular(12),
+              bottomLeft: Radius.circular(12.r),
+              bottomRight: Radius.circular(12.r),
             ),
             color: Colors.white,
           ),
@@ -67,5 +66,3 @@ class EventCard extends StatelessWidget {
     );
   }
 }
-
-

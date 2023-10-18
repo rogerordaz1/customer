@@ -13,15 +13,15 @@ class EventActionButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final styleOutlineButton = ButtonStyle(
       padding: MaterialStatePropertyAll(
-        EdgeInsets.symmetric(horizontal: 18.w, vertical: 6.h),
+        EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       ),
       foregroundColor: const MaterialStatePropertyAll(Color(0xff0E6BF0)),
-      side: const MaterialStatePropertyAll(
-          BorderSide(color: Color(0xff0E6BF0), width: 2)),
+      side: MaterialStatePropertyAll(
+          BorderSide(color: const Color(0xff0E6BF0), width: 2.w)),
       alignment: Alignment.center,
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
       ),
     );
@@ -33,7 +33,7 @@ class EventActionButtonWidget extends StatelessWidget {
       alignment: Alignment.center,
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
       ),
     );

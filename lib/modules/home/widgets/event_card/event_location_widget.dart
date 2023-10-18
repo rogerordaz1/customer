@@ -56,7 +56,6 @@ class EventLocationWidget extends StatelessWidget {
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: Color(0xff656565),
-                height: 16 / 12,
               ),
               textAlign: TextAlign.left,
             )
