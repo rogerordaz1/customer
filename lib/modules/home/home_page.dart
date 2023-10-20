@@ -13,6 +13,7 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final List<int> list = [1, 2, 3];
     FlutterStatusbarcolor.setStatusBarColor(Colors.black);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
@@ -21,19 +22,23 @@ class HomePage extends GetView<HomeController> {
           children: [
             ListView(
               physics: const BouncingScrollPhysics(),
-              children: [
-                SizedBox(
-                  height: 60.h,
-                ),
-                const EventCard(),
-                SizedBox(
-                  height: 10.h,
-                ),
-                const EventCard(),
-                SizedBox(
-                  height: 60.h,
-                ),
-              ],
+              children: list.map(
+                (item) {
+                  if (item == 2) {
+                    return Padding(
+                        padding: EdgeInsets.only(
+                            top: item == 1 ? 60.h : 10.h,
+                            bottom: item == list.length ? 100.h : 10.h),
+                        child: const EventCard(isEvent: false));
+                  }
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        top: item == 1 ? 60.h : 10.h,
+                        bottom: item == list.length ? 100.h : 10.h),
+                    child: const EventCard(isEvent: true),
+                  );
+                },
+              ).toList(),
             ),
             const CustomAppBar(),
           ],

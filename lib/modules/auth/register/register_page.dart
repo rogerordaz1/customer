@@ -22,7 +22,7 @@ class RegisterPage extends GetView<RegisterController> {
             child: SafeArea(
               child: Column(
                 children: [
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   const Align(
                       alignment: Alignment.bottomLeft,
                       child: CustomBackButtom()),

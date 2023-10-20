@@ -1,7 +1,7 @@
-import 'package:app/modules/layout/layout_binding.dart';
+import 'package:app/modules/layout/routes/layout_binding.dart';
 import 'package:get/get.dart';
 
-import 'layout_page.dart';
+import '../pages/layout_page.dart';
 
 class LayoutRoutes {
   LayoutRoutes._();

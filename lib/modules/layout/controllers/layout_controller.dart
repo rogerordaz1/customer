@@ -1,24 +1,12 @@
+import 'package:app/modules/layout/controllers/layout_state.dart';
 import 'package:get/get.dart';
 
 class LayoutController extends GetxController {
+  final layoutState = LayoutState(selectedIndex: 0).obs;
 
-  
-  
-  
-  //TODO: Implement LayoutController.
-
-  @override
-  void onInit() {
-    super.onInit();
+  void updateSelectedIndex(int value) {
+    layoutState(layoutState.value.copyWith(selectedIndex: value));
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 }

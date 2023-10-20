@@ -1,13 +1,19 @@
+
 import 'package:app/core/utils/botton_sheets/botton_sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:tabler_icons/tabler_icons.dart';
 
+import '../../../../core/common/widgets/widgets.dart';
+
 class EventActionButtonWidget extends StatelessWidget {
   const EventActionButtonWidget({
     super.key,
+    required this.isEvent,
   });
+
+  final bool isEvent;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +32,21 @@ class EventActionButtonWidget extends StatelessWidget {
       ),
     );
 
-    final styleFilledButton = ButtonStyle(
+    final styleEventFilledButton = ButtonStyle(
       padding: MaterialStatePropertyAll(
-          EdgeInsets.symmetric(horizontal: 28.w, vertical: 6.h)),
-      backgroundColor: const MaterialStatePropertyAll(Color(0xff0E6BF0)),
+          EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h)),
+      backgroundColor: const MaterialStatePropertyAll(Color(0xFFEC5E20)),
+      alignment: Alignment.center,
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+      ),
+    );
+    final styleEspectaculoFilledButton = ButtonStyle(
+      padding: MaterialStatePropertyAll(
+          EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h)),
+      backgroundColor: const MaterialStatePropertyAll(Color(0xff0e6bf0)),
       alignment: Alignment.center,
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(
@@ -39,54 +56,26 @@ class EventActionButtonWidget extends StatelessWidget {
     );
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        OutlinedButton(
+        Expanded(
+            child: CustomOutlineButton(
+          buttonText: "Ver detalles",
+          iconData: TablerIcons.eye,
           style: styleOutlineButton,
           onPressed: () =>
               BottonSheets.showEventDetailBottomSheet(context: context),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(TablerIcons.eye),
-              SizedBox(
-                width: 8.w,
-              ),
-              const Text(
-                "Ver detalles",
-                style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff0e6bf0),
-                ),
-                textAlign: TextAlign.left,
-              )
-            ],
-          ),
-        ),
-        FilledButton(
-          style: styleFilledButton,
+        )),
+        SizedBox(width: 18.w),
+        Expanded(
+            child: CustomFilledButton(
+          buttonText: "Reservar",
+          iconData: TablerIcons.ticket,
           onPressed: () {},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(TablerIcons.ticket),
-              SizedBox(
-                width: 8.w,
-              ),
-              const Text(
-                "Reservar",
-                style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-                textAlign: TextAlign.left,
-              )
-            ],
-          ),
-        )
+          style: isEvent == true
+              ? styleEventFilledButton
+              : styleEspectaculoFilledButton,
+        ))
       ],
     );
   }

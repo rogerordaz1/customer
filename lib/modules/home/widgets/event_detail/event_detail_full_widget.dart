@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/common/widgets/widgets.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../widgets.dart';
 
@@ -37,26 +38,7 @@ class EventDetailFullWidget extends StatelessWidget {
                 SizedBox(height: 12.h),
                 SizedBox(
                   height: 280.h,
-                  child: ListView(
-                    physics: const BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    children: [1, 2, 3, 4]
-                        .map(
-                          (item) => Container(
-                            width: MediaQuery.of(context).size.width * 0.80,
-                            margin: EdgeInsets.only(left: 10.w),
-                            decoration: const BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(12)),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage('assets/image1.png'),
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
-                  ),
+                  child: const EventDetailImagesSectionWidget(),
                 ),
                 SizedBox(height: 12.h),
                 Padding(
@@ -66,7 +48,7 @@ class EventDetailFullWidget extends StatelessWidget {
                     children: [
                       const EventTextName(title: 'Paisajes Sin Nombre'),
                       SizedBox(height: 12.h),
-                      const AuthorImgAndName(
+                      const EventAuthorImgAndName(
                         authorImg: 'assets/image1.png',
                         authorName: 'Enrique Casas',
                         isIconShowing: false,
@@ -79,9 +61,11 @@ class EventDetailFullWidget extends StatelessWidget {
                         subtitle: 'San Rafael No.103 e/ Consulado e Industria',
                       ),
                       SizedBox(height: 12.h),
-                      const CheckInButton(),
+                      const EventDetailCheckInButtonWidget(),
                       SizedBox(height: 16.h),
-                      const AboutThisEventWidget(),
+                      const EventDetailAboutThisEventWidget(),
+                      SizedBox(height: 10.h),
+                      const EventDetailMapLocationSectionWidget(),
                     ],
                   ),
                 ),
@@ -90,6 +74,33 @@ class EventDetailFullWidget extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class EventDetailMapLocationSectionWidget extends StatelessWidget {
+  const EventDetailMapLocationSectionWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Ubicacion en el mapa',
+          style: TextStyle(
+            color: Color(0xFF1A1A1A),
+            fontSize: 14,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        SizedBox(height: 16.h),
+        const EventDetailMapLocationImageWidget(),
+        SizedBox(height: 16.h),
+      ],
     );
   }
 }

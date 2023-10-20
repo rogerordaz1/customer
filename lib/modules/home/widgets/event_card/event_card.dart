@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/common/widgets/widgets.dart';
 import '../widgets.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({
     super.key,
+    required this.isEvent,
   });
+
+  final bool isEvent;
 
   //?A este Widget se le debe pasar por parametros el EVENTO ..
 
@@ -48,7 +52,7 @@ class EventCard extends StatelessWidget {
             children: [
               const EventTextName(title: 'Paisajes sin nombre'),
               SizedBox(height: 5.h),
-              const AuthorImgAndName(
+              const EventAuthorImgAndName(
                   authorImg: 'assets/image1.png', authorName: 'Enrique Casas'),
               SizedBox(height: 10.h),
               const EventLocationWidget(
@@ -58,7 +62,7 @@ class EventCard extends StatelessWidget {
               SizedBox(height: 10.h),
               const EventDateAndTimeWidget(),
               SizedBox(height: 10.h),
-              const EventActionButtonWidget()
+              EventActionButtonWidget(isEvent: isEvent)
             ],
           ),
         ),

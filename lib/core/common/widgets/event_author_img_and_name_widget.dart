@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
-class AuthorImgAndName extends StatelessWidget {
-  const AuthorImgAndName({
+class EventAuthorImgAndName extends StatelessWidget {
+  const EventAuthorImgAndName({
     super.key,
     required this.authorImg,
     required this.authorName,

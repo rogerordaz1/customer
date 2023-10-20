@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
-class AboutThisEventWidget extends StatefulWidget {
-  const AboutThisEventWidget({
+class EventDetailAboutThisEventWidget extends StatefulWidget {
+  const EventDetailAboutThisEventWidget({
     super.key,
   });
 
   @override
-  State<AboutThisEventWidget> createState() => _AboutThisEventWidgetState();
+  State<EventDetailAboutThisEventWidget> createState() =>
+      _EventDetailAboutThisEventWidgetState();
 }
 
-class _AboutThisEventWidgetState extends State<AboutThisEventWidget> {
+class _EventDetailAboutThisEventWidgetState
+    extends State<EventDetailAboutThisEventWidget> {
   bool isReadMore = false;
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class _AboutThisEventWidgetState extends State<AboutThisEventWidget> {
               child: Row(
                 children: [
                   Text(
-                    isReadMore == false ? 'Leer más' : 'Contraer',
+                    isReadMore == false ? 'Leer más' : 'leer menos',
                     style: TextStyle(
                       color: AppColors.primary,
                       fontSize: 14,
@@ -49,6 +51,7 @@ class _AboutThisEventWidgetState extends State<AboutThisEventWidget> {
                       letterSpacing: 0.10,
                     ),
                   ),
+                  SizedBox(width: 8.w),
                   isReadMore == true
                       ? Icon(
                           TablerIcons.chevron_up,

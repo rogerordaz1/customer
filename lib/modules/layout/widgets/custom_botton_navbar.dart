@@ -1,5 +1,7 @@
+import 'package:app/modules/layout/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
 import 'widgets.dart';
@@ -11,6 +13,7 @@ class CustomBottonNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<LayoutController>();
     return Container(
       height: 45.h,
       margin: EdgeInsets.only(bottom: 5.h),
@@ -30,40 +33,52 @@ class CustomBottonNavBar extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            NavBarItem(
-              isSelected: true,
-              // isSelected: navBarCubit.state.index == 0 ? true : false,
-              iconData: TablerIcons.home,
+        child: Obx(() {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              NavBarItem(
+                isSelected: controller.layoutState.value.selectedIndex == 0
+                    ? true
+                    : false,
+                // isSelected: navBarCubit.state.index == 0 ? true : false,
+                iconData: TablerIcons.home,
 
-              onPressed: () {},
-              // onPressed: () => navBarCubit.updateIndexNavBar(0),
-            ),
-            NavBarItem(
-              isSelected: false,
-              iconData: TablerIcons.search,
-              onPressed: () {},
-            ),
-            NavBarItem(
-              isSelected: false,
-              iconData: TablerIcons.ticket,
-              onPressed: () {},
-            ),
-            NavBarItem(
-              isSelected: false,
-              isBell: true,
-              iconData: TablerIcons.bell,
-              onPressed: () {},
-            ),
-            NavBarItem(
-              isSelected: false,
-              iconData: TablerIcons.user_circle,
-              onPressed: () {},
-            ),
-          ],
-        ),
+                onPressed: () => controller.updateSelectedIndex(0),
+                // onPressed: () => navBarCubit.updateIndexNavBar(0),
+              ),
+              NavBarItem(
+                isSelected: controller.layoutState.value.selectedIndex == 1
+                    ? true
+                    : false,
+                iconData: TablerIcons.search,
+                onPressed: () => controller.updateSelectedIndex(1),
+              ),
+              NavBarItem(
+                isSelected: controller.layoutState.value.selectedIndex == 2
+                    ? true
+                    : false,
+                iconData: TablerIcons.ticket,
+                onPressed: () => controller.updateSelectedIndex(2),
+              ),
+              NavBarItem(
+                isSelected: controller.layoutState.value.selectedIndex == 3
+                    ? true
+                    : false,
+                isBell: true,
+                iconData: TablerIcons.bell,
+                onPressed: () => controller.updateSelectedIndex(3),
+              ),
+              NavBarItem(
+                isSelected: controller.layoutState.value.selectedIndex == 4
+                    ? true
+                    : false,
+                iconData: TablerIcons.user_circle,
+                onPressed: () => controller.updateSelectedIndex(4),
+              ),
+            ],
+          );
+        }),
       ),
     );
   }

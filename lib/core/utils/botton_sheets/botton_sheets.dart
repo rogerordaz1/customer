@@ -1,10 +1,10 @@
-import 'package:app/core/theme/app_colors.dart';
-import 'package:flutter/gestures.dart';
+
+
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
-import 'package:tabler_icons/tabler_icons.dart';
+
 
 import '../../../modules/home/widgets/widgets.dart';
 
