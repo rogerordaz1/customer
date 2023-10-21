@@ -13,12 +13,12 @@ class EventDateAndTimeWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 2.w),
+          padding: EdgeInsets.symmetric(horizontal: 5.w),
           width: 175.w,
-          height: 30.h,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Color.fromRGBO(238, 238, 238, 1),
+          height: 35.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
+            color: const Color.fromRGBO(238, 238, 238, 1),
           ),
           child: const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,21 +32,21 @@ class EventDateAndTimeWidget extends StatelessWidget {
         ),
         Container(
           width: 50.w,
-          height: 30.h,
+          height: 35.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10.r)),
             color: const Color.fromRGBO(238, 238, 238, 1),
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "\$50.00",
                 style: TextStyle(
                   fontFamily: "Roboto",
-                  fontSize: 14,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xff0e6bf0),
+                  color: const Color(0xff0e6bf0),
                 ),
                 textAlign: TextAlign.left,
               ),
@@ -54,11 +54,10 @@ class EventDateAndTimeWidget extends StatelessWidget {
                 "/Entrada",
                 style: TextStyle(
                   fontFamily: "Roboto",
-                  fontSize: 12,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xff848484),
+                  color: const Color(0xff848484),
                 ),
-                textAlign: TextAlign.left,
               )
             ],
           ),
@@ -88,7 +87,7 @@ class DateAndTimeWidgetItem extends StatelessWidget {
           textAlign: TextAlign.left,
         ),
         SizedBox(width: 8.w),
-        const Column(
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -96,9 +95,9 @@ class DateAndTimeWidgetItem extends StatelessWidget {
               "Dic.",
               style: TextStyle(
                 fontFamily: "Roboto",
-                fontSize: 12,
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w500,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
               textAlign: TextAlign.left,
             ),
@@ -106,9 +105,9 @@ class DateAndTimeWidgetItem extends StatelessWidget {
               "09:00pm",
               style: TextStyle(
                 fontFamily: "Roboto",
-                fontSize: 12,
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w400,
-                color: Color(0xff848484),
+                color: const Color(0xff848484),
               ),
               textAlign: TextAlign.left,
             )

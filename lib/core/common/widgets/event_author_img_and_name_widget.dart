@@ -16,11 +16,11 @@ class EventAuthorImgAndName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const style = TextStyle(
+    final style = TextStyle(
       fontFamily: "Roboto",
-      fontSize: 14,
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400,
-      color: Color(0xff232323),
+      color: const Color(0xff232323),
     );
 
     return Row(

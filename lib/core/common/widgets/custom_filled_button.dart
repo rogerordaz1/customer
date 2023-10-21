@@ -25,7 +25,10 @@ class CustomFilledButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(iconData),
+          Icon(
+            iconData,
+            size: 20.h,
+          ),
           SizedBox(
             width: 8.w,
           ),

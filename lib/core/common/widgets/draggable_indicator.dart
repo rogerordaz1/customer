@@ -11,10 +11,10 @@ class DraggableIndicator extends StatelessWidget {
     return Container(
       width: 35.w,
       height: 4.h,
-      decoration: const BoxDecoration(
-        color: Color(0xffBABABA),
+      decoration: BoxDecoration(
+        color: const Color(0xffBABABA),
         borderRadius: BorderRadius.all(
-          Radius.circular(20),
+          Radius.circular(20.r),
         ),
       ),
     );

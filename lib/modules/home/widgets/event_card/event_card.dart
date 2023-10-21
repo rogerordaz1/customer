@@ -62,7 +62,7 @@ class EventCard extends StatelessWidget {
               SizedBox(height: 10.h),
               const EventDateAndTimeWidget(),
               SizedBox(height: 10.h),
-              EventActionButtonWidget(isEvent: isEvent)
+              Expanded(child: EventActionButtonWidget(isEvent: isEvent)),
             ],
           ),
         ),

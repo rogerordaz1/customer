@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EventTextName extends StatelessWidget {
   const EventTextName({
@@ -10,11 +11,11 @@ class EventTextName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const style = TextStyle(
+    final style = TextStyle(
       fontFamily: "Roboto",
-      fontSize: 16,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w500,
-      color: Color(0xff1a1a1a),
+      color: const Color(0xff1a1a1a),
     );
 
     return Text(

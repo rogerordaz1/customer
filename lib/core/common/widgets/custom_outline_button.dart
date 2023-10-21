@@ -21,20 +21,21 @@ class CustomOutlineButton extends StatelessWidget {
       onPressed: onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(iconData),
-          SizedBox(
-            width: 8.w,
+          Icon(
+            iconData,
+            size: 20.h,
           ),
+          SizedBox(width: 8.w),
           Text(
             buttonText,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: "Roboto",
-              fontSize: 14,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              color: Color(0xff0e6bf0),
+              color: const Color(0xff0e6bf0),
             ),
-            textAlign: TextAlign.left,
           )
         ],
       ),

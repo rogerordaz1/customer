@@ -12,7 +12,7 @@ class EventDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.h,
+      height: 350.h,
       // width: 300.w,
       padding: EdgeInsets.symmetric(horizontal: 14.h),
       decoration: BoxDecoration(
@@ -43,9 +43,10 @@ class EventDetailsWidget extends StatelessWidget {
             subtitle: 'San Rafael No.103 e/ Consulado e Industria',
           ),
           SizedBox(height: 12.h),
-          const EventDetailDescriptionWidget(),
-          SizedBox(height: 12.h),
+          const Expanded(child: EventDetailDescriptionWidget()),
+          SizedBox(height: 6.h),
           const EventDetailCheckInButtonWidget(),
+          SizedBox(height: 12.h),
         ],
       ),
     );

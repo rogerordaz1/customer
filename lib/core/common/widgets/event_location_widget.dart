@@ -38,11 +38,11 @@ class EventLocationWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: "Roboto",
-                fontSize: 12,
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w500,
-                color: Color(0xff000000),
+                color: const Color(0xff000000),
               ),
               textAlign: TextAlign.left,
             ),
@@ -51,11 +51,11 @@ class EventLocationWidget extends StatelessWidget {
             ),
             Text(
               subtitle,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: "Roboto",
-                fontSize: 12,
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w400,
-                color: Color(0xff656565),
+                color: const Color(0xff656565),
               ),
               textAlign: TextAlign.left,
             )

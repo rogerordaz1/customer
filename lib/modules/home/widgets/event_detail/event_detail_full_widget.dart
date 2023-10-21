@@ -94,11 +94,11 @@ class ShowsInThisEventSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Espectaculos de este Evento',
           style: TextStyle(
-            color: Color(0xFF1A1A1A),
-            fontSize: 14,
+            color: const Color(0xFF1A1A1A),
+            fontSize: 14.sp,
             fontFamily: 'Roboto',
             fontWeight: FontWeight.w500,
           ),
@@ -174,7 +174,7 @@ class ShowCard extends StatelessWidget {
                 ),
                 Container(
                   height: 35.h,
-                  width: 90.w,
+                  width: 95.w,
                   padding: EdgeInsets.symmetric(horizontal: 5.w),
                   decoration: BoxDecoration(
                       color: AppColors.dark50,
