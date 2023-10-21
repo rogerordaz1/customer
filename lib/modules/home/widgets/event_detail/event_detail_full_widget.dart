@@ -8,7 +8,10 @@ import '../widgets.dart';
 class EventDetailFullWidget extends StatelessWidget {
   const EventDetailFullWidget({
     super.key,
+    this.isEvent = true,
   });
+
+  final bool? isEvent;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +70,8 @@ class EventDetailFullWidget extends StatelessWidget {
                       SizedBox(height: 10.h),
                       const EventDetailMapLocationSectionWidget(),
                       SizedBox(height: 10.h),
-                      const ShowInThisEventSection(),
+                      if (isEvent != null && isEvent == true)
+                        const ShowsInThisEventSection(),
                     ],
                   ),
                 ),
@@ -80,8 +84,8 @@ class EventDetailFullWidget extends StatelessWidget {
   }
 }
 
-class ShowInThisEventSection extends StatelessWidget {
-  const ShowInThisEventSection({
+class ShowsInThisEventSection extends StatelessWidget {
+  const ShowsInThisEventSection({
     super.key,
   });
 
@@ -100,11 +104,20 @@ class ShowInThisEventSection extends StatelessWidget {
           ),
         ),
         SizedBox(
+          height: 20.h,
+        ),
+        SizedBox(
           height: 400.h,
-          child: ListView.builder(
-            itemCount: 4,
+          child: ListView.separated(
+            physics: const BouncingScrollPhysics(),
+            itemCount: 10,
             itemBuilder: (context, index) {
               return const ShowCard();
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return SizedBox(
+                height: 10.h,
+              );
             },
           ),
         ),

@@ -1,15 +1,12 @@
-
-
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-
 import '../../../modules/home/widgets/widgets.dart';
 
 class BottonSheets {
-  static dynamic showEventDetailBottomSheet({required BuildContext context}) {
+  static dynamic showEventDetailBottomSheet(
+      {required BuildContext context, required bool isEvent}) {
     return Get.bottomSheet(
       GestureDetector(
         onTap: () {
@@ -18,7 +15,9 @@ class BottonSheets {
             backgroundColor: Colors.transparent,
             context: Scaffold.of(context).context,
             builder: (context) {
-              return const EventDetailFullWidget();
+              return EventDetailFullWidget(
+                isEvent: isEvent,
+              );
             },
           );
         },
@@ -27,7 +26,3 @@ class BottonSheets {
     );
   }
 }
-
-
-
-

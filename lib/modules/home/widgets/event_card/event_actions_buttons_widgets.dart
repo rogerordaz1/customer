@@ -1,4 +1,3 @@
-
 import 'package:app/core/utils/botton_sheets/botton_sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,8 +62,8 @@ class EventActionButtonWidget extends StatelessWidget {
           buttonText: "Ver detalles",
           iconData: TablerIcons.eye,
           style: styleOutlineButton,
-          onPressed: () =>
-              BottonSheets.showEventDetailBottomSheet(context: context),
+          onPressed: () => BottonSheets.showEventDetailBottomSheet(
+              context: context, isEvent: isEvent),
         )),
         SizedBox(width: 18.w),
         Expanded(
