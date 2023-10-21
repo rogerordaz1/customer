@@ -66,6 +66,8 @@ class EventDetailFullWidget extends StatelessWidget {
                       const EventDetailAboutThisEventWidget(),
                       SizedBox(height: 10.h),
                       const EventDetailMapLocationSectionWidget(),
+                      SizedBox(height: 10.h),
+                      const ShowInThisEventSection(),
                     ],
                   ),
                 ),
@@ -74,6 +76,103 @@ class EventDetailFullWidget extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class ShowInThisEventSection extends StatelessWidget {
+  const ShowInThisEventSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Espectaculos de este Evento',
+          style: TextStyle(
+            color: Color(0xFF1A1A1A),
+            fontSize: 14,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        SizedBox(
+          height: 400.h,
+          child: ListView.builder(
+            itemCount: 4,
+            itemBuilder: (context, index) {
+              return const ShowCard();
+            },
+          ),
+        ),
+        SizedBox(height: 20.h),
+      ],
+    );
+  }
+}
+
+class ShowCard extends StatelessWidget {
+  const ShowCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 90.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(6.r)),
+                image: const DecorationImage(
+                  image: AssetImage('assets/image1.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 14.w,
+          ),
+          Expanded(
+            flex: 5,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Vampiros en La Habana',
+                  style: TextStyle(
+                    color: const Color(0xFF1A1A1A),
+                    fontSize: 14.sp,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Container(
+                  height: 35.h,
+                  width: 90.w,
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  decoration: BoxDecoration(
+                      color: AppColors.dark50,
+                      borderRadius: BorderRadius.circular(10.r)),
+                  child: const DateAndTimeWidgetItem(),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
