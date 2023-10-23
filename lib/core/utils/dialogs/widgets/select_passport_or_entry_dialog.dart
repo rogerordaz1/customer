@@ -46,7 +46,6 @@ class SelectPassportOrEntryDialog extends StatelessWidget {
       actionsPadding: pading,
       actions: [
         CustomOutlineButton(
-          iconData: null,
           buttonText: 'Una entrada',
           onPressed: () {
             Get.back();

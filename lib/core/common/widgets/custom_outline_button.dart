@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomOutlineButton extends StatelessWidget {
   const CustomOutlineButton({
     super.key,
-    required this.iconData,
+    this.iconData,
     required this.buttonText,
     required this.onPressed,
     required this.style,
