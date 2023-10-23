@@ -1,6 +1,7 @@
+import 'package:app/modules/auth/recovery_password/recovery_password_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 import '../../../core/theme/app_colors.dart';
 
 class ForgotPasswordText extends StatelessWidget {
@@ -13,23 +14,23 @@ class ForgotPasswordText extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 32.h,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'He olvidado mi contraseña',
-            style: TextStyle(
-              color: AppColors.primary,
-              fontSize: 12,
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w500,
-              height: 0.11,
-              letterSpacing: 0.50,
+      child: GestureDetector(
+        onTap: () => Get.toNamed(RecoveryPasswordRoutes.recovery),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'He olvidado mi contraseña',
+              style: TextStyle(
+                color: AppColors.primary,
+                fontSize: 12,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

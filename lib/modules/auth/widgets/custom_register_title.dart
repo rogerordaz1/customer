@@ -19,7 +19,7 @@ class CustomRegisterTitles extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Roboto',
         fontWeight: isSubtitle ? FontWeight.w500 : FontWeight.w400,
-        fontSize: isSubtitle ? 12.sp : 28.sp,
+        fontSize: isSubtitle ? 12.sp : 25.sp,
         fontStyle: FontStyle.normal,
       ),
     );

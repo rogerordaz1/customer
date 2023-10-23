@@ -1,4 +1,5 @@
 import 'package:app/modules/auth/login/login_routes.dart';
+import 'package:app/modules/auth/recovery_password/recovery_password.dart';
 import 'package:app/modules/auth/register/register_routes.dart';
 import 'package:app/modules/home/routes/home_routes.dart';
 import 'package:app/modules/layout/routes/layout_routes.dart';
@@ -12,6 +13,7 @@ class AppPages {
   static final routes = [
     ...LoginRoutes.routes,
     ...RegisterRoutes.routes,
+    ...RecoveryPasswordRoutes.routes,
     ...LayoutRoutes.routes,
     ...HomeRoutes.routes,
     ...MapsRoutes.routes,
