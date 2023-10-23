@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+//import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 typedef AppBuilder = Widget Function();
 
 mixin MainRunner {
   static T? _runZoned<T>(T Function() body) => runZonedGuarded<T>(
         body,
-        (e, st) => null,
+        (e, st) {},
       );
 
   static void run({
@@ -20,7 +20,7 @@ mixin MainRunner {
 
         HttpOverrides.global = MyHttpOverrides();
 
-      //  await dotenv.load(fileName: ".env");
+        //  await dotenv.load(fileName: ".env");
         runApp(appBuilder());
       },
     );

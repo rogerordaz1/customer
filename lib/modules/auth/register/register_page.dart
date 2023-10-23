@@ -26,7 +26,7 @@ class RegisterPage extends GetView<RegisterController> {
                   const Align(
                       alignment: Alignment.bottomLeft,
                       child: CustomBackButtom()),
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 80),
                   const CustomRegisterTitles(
                       text: 'Crear una cuenta', isSubtitle: false),
                   SizedBox(height: 8.h),
@@ -38,10 +38,12 @@ class RegisterPage extends GetView<RegisterController> {
                   SizedBox(height: 80.h),
                   const CustomFormField(hintext: 'Numero de teléfono'),
                   SizedBox(height: 8.h),
+                  const CustomFormField(hintext: 'Correo electrónico'),
+                  SizedBox(height: 8.h),
                   const CustomFormField(hintext: 'Contraseña'),
                   SizedBox(height: 8.h),
                   const CustomFormField(hintext: 'Repita la contraseña'),
-                  SizedBox(height: 120.h),
+                  SizedBox(height: 60.h),
                   CustomLoginButtoms(
                       onTap: () {}, hintext: 'Continuar', ispraimary: true),
                 ],
