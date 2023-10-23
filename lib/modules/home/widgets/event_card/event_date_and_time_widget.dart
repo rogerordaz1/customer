@@ -4,7 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class EventDateAndTimeWidget extends StatelessWidget {
   const EventDateAndTimeWidget({
     super.key,
+    required this.isEvent,
   });
+
+  final bool isEvent;
 
   @override
   Widget build(BuildContext context) {
@@ -30,38 +33,37 @@ class EventDateAndTimeWidget extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          width: 50.w,
-          height: 35.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.r)),
-            color: const Color.fromRGBO(238, 238, 238, 1),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "\$50.00",
-                style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xff0e6bf0),
+        if (isEvent == false)
+          Container(
+            width: 50.w,
+            height: 35.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10.r)),
+              color: const Color.fromRGBO(238, 238, 238, 1),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "\$50.00",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium!
+                      .copyWith(fontWeight: FontWeight.w400),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
-              ),
-              Text(
-                "/Entrada",
-                style: TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xff848484),
-                ),
-              )
-            ],
-          ),
-        )
+                Text(
+                  "/Entrada",
+                  style: TextStyle(
+                    fontFamily: "Roboto",
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xff848484),
+                  ),
+                )
+              ],
+            ),
+          )
       ],
     );
   }

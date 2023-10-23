@@ -36,7 +36,7 @@ class EventDetailsWidget extends StatelessWidget {
             isIconShowing: false,
           ),
           SizedBox(height: 12.h),
-          const EventDateAndTimeWidget(),
+          const EventDateAndTimeWidget(isEvent: false),
           SizedBox(height: 12.h),
           const EventLocationWidget(
             title: 'Galería Collage Habana',

@@ -1,5 +1,6 @@
 import 'package:app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData buildThemeData() {
   // const fontFamily100 = 'MuseoSans-100';
@@ -28,24 +29,28 @@ ThemeData buildThemeData() {
         ),
       ),
     ),
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(
+    textTheme: TextTheme(
+      titleMedium: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+      ),
+      bodyLarge: const TextStyle(
         fontSize: 26,
         fontWeight: FontWeight.w700,
       ),
-      bodyMedium: TextStyle(
+      bodyMedium: const TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w300,
       ),
       headlineMedium: TextStyle(
-        fontSize: 18,
+        fontSize: 12.sp,
         fontWeight: FontWeight.w300,
       ),
-      bodySmall: TextStyle(
+      bodySmall: const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w200,
       ),
-      headlineLarge: TextStyle(
+      headlineLarge: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w600,
       ),

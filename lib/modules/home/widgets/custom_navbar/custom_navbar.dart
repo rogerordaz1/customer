@@ -92,7 +92,7 @@ class CustomFilter extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.only(top: 15.h, bottom: 15.h),
             width: MediaQuery.of(context).size.width,
-            height: 165.h,
+            height: 170.h,
             color: const Color.fromRGBO(255, 255, 255, 1),
             child: Column(
               children: [
@@ -157,11 +157,11 @@ class FilterPill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(238, 238, 238, 1),
+      padding: EdgeInsets.symmetric(horizontal: 14.w),
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(238, 238, 238, 1),
         borderRadius: BorderRadius.all(
-          Radius.circular(30),
+          Radius.circular(30.r),
         ),
       ),
       child: Row(
@@ -195,10 +195,10 @@ class FilterSearchWidget extends StatelessWidget {
     return Container(
       height: 45.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(238, 238, 238, 1),
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(238, 238, 238, 1),
         borderRadius: BorderRadius.all(
-          Radius.circular(30),
+          Radius.circular(30.r),
         ),
       ),
       child: Row(

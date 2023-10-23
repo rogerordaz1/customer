@@ -11,7 +11,7 @@ class EventDetailFullWidget extends StatelessWidget {
     this.isEvent = true,
   });
 
-  final bool? isEvent;
+  final bool isEvent;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class EventDetailFullWidget extends StatelessWidget {
                         isIconShowing: false,
                       ),
                       SizedBox(height: 12.h),
-                      const EventDateAndTimeWidget(),
+                      EventDateAndTimeWidget(isEvent: isEvent),
                       SizedBox(height: 12.h),
                       const EventLocationWidget(
                         title: 'Galería Collage Habana',
@@ -70,8 +70,7 @@ class EventDetailFullWidget extends StatelessWidget {
                       SizedBox(height: 10.h),
                       const EventDetailMapLocationSectionWidget(),
                       SizedBox(height: 10.h),
-                      if (isEvent != null && isEvent == true)
-                        const ShowsInThisEventSection(),
+                      if (isEvent == true) const ShowsInThisEventSection(),
                     ],
                   ),
                 ),
@@ -107,7 +106,7 @@ class ShowsInThisEventSection extends StatelessWidget {
           height: 20.h,
         ),
         SizedBox(
-          height: 400.h,
+          height: 300.h,
           child: ListView.separated(
             physics: const BouncingScrollPhysics(),
             itemCount: 10,
