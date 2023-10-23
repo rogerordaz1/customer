@@ -29,6 +29,35 @@ ThemeData buildThemeData() {
         ),
       ),
     ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+        padding: MaterialStatePropertyAll(
+          EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        ),
+        alignment: Alignment.center,
+        shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+        ),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+        padding: MaterialStatePropertyAll(
+          EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+        ),
+        foregroundColor: MaterialStatePropertyAll(AppColors.primary),
+        side: MaterialStatePropertyAll(
+            BorderSide(color: AppColors.primary, width: 2.w)),
+        alignment: Alignment.center,
+        shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+        ),
+      ),
+    ),
     textTheme: TextTheme(
       titleMedium: TextStyle(
         fontSize: 14.sp,
@@ -46,13 +75,13 @@ ThemeData buildThemeData() {
         fontSize: 12.sp,
         fontWeight: FontWeight.w300,
       ),
-      bodySmall: const TextStyle(
-        fontSize: 14,
+      bodySmall: TextStyle(
+        fontSize: 10.sp,
         fontWeight: FontWeight.w200,
       ),
-      headlineLarge: const TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
+      headlineLarge: TextStyle(
+        fontSize: 22.sp,
+        fontWeight: FontWeight.w400,
       ),
     ),
   );

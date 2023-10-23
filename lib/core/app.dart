@@ -12,17 +12,20 @@ class CustomerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      minTextAdapt: true,
       designSize: const Size(328, 640),
-      child: GetMaterialApp(
-        useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-        title: 'Customer App',
-        debugShowCheckedModeBanner: false,
-        theme: buildThemeData(),
-        initialRoute: AppPages.initial,
-        getPages: AppPages.routes,
-      ),
+      builder: (context, child) {
+        return GetMaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          title: 'Customer App',
+          debugShowCheckedModeBanner: false,
+          theme: buildThemeData(),
+          initialRoute: AppPages.initial,
+          getPages: AppPages.routes,
+        );
+      },
     );
   }
 }

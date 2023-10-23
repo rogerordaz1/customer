@@ -4,9 +4,9 @@ import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 
 import 'package:get/get.dart';
 
-import 'home_controller.dart';
-import 'widgets/custom_navbar/custom_navbar.dart';
-import 'widgets/widgets.dart';
+import '../controllers/home_controller.dart';
+import '../widgets/custom_navbar/custom_navbar.dart';
+import '../widgets/widgets.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});

@@ -60,7 +60,7 @@ class EventCard extends StatelessWidget {
                 subtitle: 'Ciudad de La Habana',
               ),
               SizedBox(height: 10.h),
-               EventDateAndTimeWidget(isEvent: isEvent),
+              EventDateAndTimeWidget(isEvent: isEvent),
               SizedBox(height: 10.h),
               Expanded(child: EventActionButtonWidget(isEvent: isEvent)),
             ],

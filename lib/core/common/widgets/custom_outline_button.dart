@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomOutlineButton extends StatelessWidget {
-  const CustomOutlineButton(
-      {super.key,
-      required this.iconData,
-      required this.buttonText,
-      required this.onPressed,
-      required this.style});
+  const CustomOutlineButton({
+    super.key,
+    required this.iconData,
+    required this.buttonText,
+    required this.onPressed,
+    required this.style,
+  });
 
-  final IconData iconData;
+  final IconData? iconData;
   final String buttonText;
   final VoidCallback onPressed;
   final ButtonStyle style;
@@ -23,10 +24,11 @@ class CustomOutlineButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
-            iconData,
-            size: 20.h,
-          ),
+          if (iconData != null)
+            Icon(
+              iconData,
+              size: 19.h,
+            ),
           SizedBox(width: 8.w),
           Text(
             buttonText,
