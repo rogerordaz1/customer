@@ -14,8 +14,6 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 38.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 0.5.h),
       decoration: ShapeDecoration(
         color: AppColors.dark0,
         shape: RoundedRectangleBorder(
@@ -25,6 +23,9 @@ class CustomFormField extends StatelessWidget {
       ),
       child: TextField(
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.only(
+            left: 16.w,
+          ),
           hintText: hintext,
           hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(
                 color: AppColors.dark300,

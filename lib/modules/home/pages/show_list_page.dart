@@ -48,26 +48,4 @@ class ShowListPage extends GetView<HomeController> {
   }
 }
 
-class CustomBackButton extends StatelessWidget {
-  const CustomBackButton({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100.w,
-      child: CustomFilledButton(
-        iconData: TablerIcons.chevron_left,
-        buttonText: 'Volver',
-        iconSize: 20.h,
-        style: Theme.of(context).filledButtonTheme.style!,
-        onPressed: () => Get.back(),
-        isBackButton: true,
-        textStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
-              color: AppColors.dark0,
-            ),
-      ),
-    );
-  }
-}

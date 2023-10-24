@@ -16,7 +16,7 @@ class LoginHeader extends StatelessWidget {
           height: 64.h,
           width: 180.w,
           child: Image.asset(
-            'assets/logo_login.png',
+            'assets/logo.png',
             fit: BoxFit.fill,
           ),
         ),

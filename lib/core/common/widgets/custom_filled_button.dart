@@ -16,7 +16,7 @@ class CustomFilledButton extends StatelessWidget {
 
   final IconData? iconData;
   final String buttonText;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final ButtonStyle style;
   final TextStyle? textStyle;
   final bool? isBackButton;

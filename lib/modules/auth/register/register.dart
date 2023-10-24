@@ -1,4 +1,4 @@
-export './register_binding.dart';
-export './register_controller.dart';
-export './register_page.dart';
-export './register_routes.dart';
+export 'routes/register_binding.dart';
+export 'controllers/register_controller.dart';
+export 'pages/register_page.dart';
+export 'routes/register_routes.dart';
