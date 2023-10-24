@@ -12,7 +12,6 @@ class LoginFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
       height: 144.h,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -21,7 +20,7 @@ class LoginFields extends StatelessWidget {
           const CustomFormField(hintext: 'Numero de teléfono'),
           SizedBox(height: 8.h),
           const CustomFormField(hintext: 'Contraseña'),
-          SizedBox(height: 8.h),
+          SizedBox(height: 12.h),
           const ForgotPasswordText(),
         ],
       ),

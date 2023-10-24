@@ -1,4 +1,4 @@
-export './login_binding.dart';
-export './login_controller.dart';
-export './login_page.dart';
-export './login_routes.dart';
+export 'routes/login_binding.dart';
+export 'controllers/login_controller.dart';
+export 'pages/login_page.dart';
+export 'routes/login_routes.dart';

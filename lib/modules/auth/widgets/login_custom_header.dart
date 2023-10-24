@@ -9,29 +9,21 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
           height: 64.h,
-          width: 200.w,
+          width: 180.w,
           child: Image.asset(
             'assets/logo_login.png',
             fit: BoxFit.fill,
           ),
         ),
-        SizedBox(height: 18.h),
+        SizedBox(height: 16.h),
         Text(
           'La aplicación móvil para eventos en Cuba',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 14.sp,
-            fontFamily: 'Roboto',
-            fontWeight: FontWeight.w500,
-            height: 0.10,
-            letterSpacing: 0.10,
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ],
     );

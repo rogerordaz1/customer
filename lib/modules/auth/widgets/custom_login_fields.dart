@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/theme/app_colors.dart';
+
 class CustomFormField extends StatelessWidget {
   const CustomFormField({
     super.key,
@@ -12,27 +14,22 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 328.w,
-      height: 48.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      clipBehavior: Clip.antiAlias,
+      height: 38.h,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 0.5.h),
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: AppColors.dark0,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1, color: Color(0xFFDADADA)),
+          side: BorderSide(width: 1, color: AppColors.dark100),
           borderRadius: BorderRadius.circular(25.r),
         ),
       ),
       child: TextField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 12.h),
           hintText: hintext,
-          hintStyle: const TextStyle(
-            color: Color(0xFFA2A2A2),
-            fontSize: 14,
-            fontFamily: 'Roboto',
-            fontWeight: FontWeight.w400,
-          ),
+          hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                color: AppColors.dark300,
+                fontWeight: FontWeight.w400,
+              ),
           border: InputBorder.none,
         ),
       ),

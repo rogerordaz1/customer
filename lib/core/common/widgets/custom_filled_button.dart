@@ -11,6 +11,7 @@ class CustomFilledButton extends StatelessWidget {
     this.textStyle,
     this.isBackButton,
     this.iconSize,
+    this.isDesingInverse = false,
   });
 
   final IconData? iconData;
@@ -20,44 +21,78 @@ class CustomFilledButton extends StatelessWidget {
   final TextStyle? textStyle;
   final bool? isBackButton;
   final double? iconSize;
+  final bool? isDesingInverse;
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
       style: style,
       onPressed: onPressed,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          if (iconData != null)
-            Icon(
-              iconData,
-              size: iconSize ?? 19.h,
+      child: isDesingInverse == false
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (iconData != null)
+                  Icon(
+                    iconData,
+                    size: iconSize ?? 19.h,
+                  ),
+                isBackButton == null
+                    ? SizedBox(
+                        width: 8.w,
+                      )
+                    : SizedBox(
+                        width: 5.w,
+                      ),
+                Text(
+                  buttonText,
+                  style: textStyle ??
+                      TextStyle(
+                        fontFamily: "Roboto",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                isBackButton == null
+                    ? const SizedBox.shrink()
+                    : SizedBox(
+                        width: 5.w,
+                      ),
+              ],
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  buttonText,
+                  style: textStyle ??
+                      TextStyle(
+                        fontFamily: "Roboto",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                isBackButton == null
+                    ? const SizedBox.shrink()
+                    : SizedBox(
+                        width: 5.w,
+                      ),
+                isBackButton == null
+                    ? SizedBox(
+                        width: 8.w,
+                      )
+                    : SizedBox(
+                        width: 5.w,
+                      ),
+                if (iconData != null)
+                  Icon(
+                    iconData,
+                    size: iconSize ?? 19.h,
+                  ),
+              ],
             ),
-          isBackButton == null
-              ? SizedBox(
-                  width: 8.w,
-                )
-              : SizedBox(
-                  width: 5.w,
-                ),
-          Text(
-            buttonText,
-            style: textStyle ??
-                TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-          ),
-          isBackButton == null
-              ? const SizedBox.shrink()
-              : SizedBox(
-                  width: 5.w,
-                ),
-        ],
-      ),
     );
   }
 }

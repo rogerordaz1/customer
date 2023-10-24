@@ -11,26 +11,14 @@ class ForgotPasswordText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 32.h,
-      child: GestureDetector(
-        onTap: () => Get.toNamed(RecoveryPasswordRoutes.recovery),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'He olvidado mi contraseña',
-              style: TextStyle(
-                color: AppColors.primary,
-                fontSize: 12,
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.w500,
-              ),
+    return GestureDetector(
+      onTap: () => Get.toNamed(RecoveryPasswordRoutes.recovery),
+      child: Text(
+        'He olvidado mi contraseña',
+        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              color: AppColors.primary,
+              fontWeight: FontWeight.w500,
             ),
-          ],
-        ),
       ),
     );
   }

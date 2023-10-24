@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import './login.dart';
+import '../login.dart';
 
 class LoginRoutes {
   LoginRoutes._();
