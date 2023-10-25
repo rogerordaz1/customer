@@ -22,10 +22,10 @@ class CustomBackButton extends StatelessWidget {
         iconSize: 20.h,
         style: Theme.of(context).filledButtonTheme.style!,
         onPressed: () => Get.back(),
-        isBackButton: true,
         textStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
               color: AppColors.dark0,
             ),
+        isDesingInverse: true,
       ),
     );
   }

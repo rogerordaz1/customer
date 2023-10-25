@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:tabler_icons/tabler_icons.dart';
 
+import '../../../../core/theme/app_colors.dart';
+
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
@@ -47,8 +49,8 @@ class CustomAppBar extends StatelessWidget {
                   right: 0,
                   top: 5,
                   child: Container(
-                    height: 14.h,
-                    width: 14.w,
+                    height: 12.h,
+                    width: 12.w,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.white,
@@ -56,19 +58,20 @@ class CustomAppBar extends StatelessWidget {
                       ),
                       shape: BoxShape.circle,
                     ),
-                    child: const Badge(),
+                    child: Badge(
+                      backgroundColor: AppColors.primary,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            width: 90.w,
+            width: 85.w,
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 3.h),
             decoration: BoxDecoration(
-              color: const Color.fromRGBO(238, 238, 238, 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(20.r),
-              ),
+              color: AppColors.dark50,
+              borderRadius: BorderRadius.all(Radius.circular(20.r)),
             ),
             child: Image.asset('assets/logo.png'),
           ),

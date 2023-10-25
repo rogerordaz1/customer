@@ -47,7 +47,7 @@ ThemeData buildThemeData() {
         padding: MaterialStatePropertyAll(
           EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
         ),
-        foregroundColor: MaterialStatePropertyAll(AppColors.primary),
+        foregroundColor: const MaterialStatePropertyAll(AppColors.primary),
         side: MaterialStatePropertyAll(
             BorderSide(color: AppColors.primary, width: 2.w)),
         alignment: Alignment.center,

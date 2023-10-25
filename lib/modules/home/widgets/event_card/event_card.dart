@@ -37,7 +37,7 @@ class EventCard extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 16.w),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          height: 194.h,
+          height: 200.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(12.r),
@@ -62,7 +62,7 @@ class EventCard extends StatelessWidget {
               SizedBox(height: 10.h),
               EventDateAndTimeWidget(isEvent: isEvent),
               SizedBox(height: 10.h),
-              Expanded(child: EventActionButtonWidget(isEvent: isEvent)),
+              EventActionButtonWidget(isEvent: isEvent),
             ],
           ),
         ),

@@ -9,8 +9,10 @@ import 'package:get/get.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
+import '../../../../core/common/widgets/my_filled_button.dart';
 import '../../../../core/common/widgets/widgets.dart';
-import '../../../layout/layout.dart';
+import '../../../../core/theme/app_text_theme.dart';
+
 
 class ActivateAcountPage extends GetView<RegisterController> {
   const ActivateAcountPage({super.key});
@@ -63,7 +65,8 @@ class ActivateAcountPage extends GetView<RegisterController> {
                     child: PinFieldAutoFill(
                       decoration: CirclePinDecoration(
                           gapSpace: 10,
-                          bgColorBuilder: FixedColorBuilder(AppColors.dark0),
+                          bgColorBuilder:
+                              const FixedColorBuilder(AppColors.dark0),
                           strokeWidth: 2,
                           strokeColorBuilder:
                               const FixedColorBuilder(Color(0xFFDADADA))),
@@ -85,21 +88,13 @@ class ActivateAcountPage extends GetView<RegisterController> {
                   ),
                   const Spacer(),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 60.h),
-                    child: CustomFilledButton(
-                      iconData: TablerIcons.check,
-                      buttonText: "Activar cuenta",
+                    padding: EdgeInsets.only(bottom: 50.h),
+                    child: MyFilledButton(
+                      text: "Activar cuenta",
                       onPressed: null,
-                      style:
-                          Theme.of(context).filledButtonTheme.style!.copyWith(
-                                padding: MaterialStatePropertyAll(
-                                  EdgeInsets.symmetric(
-                                    horizontal: 12.w,
-                                    vertical: 10.h,
-                                  ),
-                                ),
-                              ),
-                      isDesingInverse: false,
+                      iconData: TablerIcons.check,
+                      style: AppTextStyles.base.s12.whiteColor.w500,
+                      isDesingInverse: true,
                     ),
                   ),
                 ],

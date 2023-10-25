@@ -1,4 +1,7 @@
+import 'package:app/core/common/widgets/my_filled_button.dart';
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:app/modules/home/routes/home_routes.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -21,26 +24,15 @@ class SelectPassportOrEntryDialog extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(16.r))),
       title: Text(
         '¿Qué desea reservar?',
-        style: Theme.of(context)
-            .textTheme
-            .headlineLarge!
-            .copyWith(color: AppColors.dark900, fontWeight: FontWeight.w400),
+        style: AppTextStyles.base.s22.w400.copyWith(color: AppColors.dark900),
       ),
       content: SizedBox(
-        height: 40.h,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Usted tiene la posibilidad de adquirir una o varias entradas para los espectáculos asociados a este evento.',
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: AppColors.dark900,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 0.25,
-                    fontSize: 10.2.sp,
-                  ),
-            )
-          ],
+        height: 60.h,
+        child: Text(
+          'Usted tiene la posibilidad de adquirir una, varias entradas o un pasaporte para los espectáculos asociados a este evento. ',
+          style: AppTextStyles.base.w400
+              .copyWith(fontSize: 12.sp)
+              .copyWith(color: AppColors.dark900, letterSpacing: 0.25),
         ),
       ),
       actionsPadding: pading,
@@ -53,11 +45,11 @@ class SelectPassportOrEntryDialog extends StatelessWidget {
           },
           style: Theme.of(context).outlinedButtonTheme.style!,
         ),
-        CustomFilledButton(
-          iconData: null,
-          buttonText: 'Un Pasaporte',
+        MyFilledButton(
+          text: '     Un Pasaporte',
+          style: AppTextStyles.base.s12.whiteColor.w500,
+          height: 30.h,
           onPressed: () {},
-          style: Theme.of(context).filledButtonTheme.style!,
         ),
       ],
     );

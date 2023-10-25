@@ -1,6 +1,9 @@
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabler_icons/tabler_icons.dart';
+
+import '../../theme/app_colors.dart';
 
 class EventLocationWidget extends StatelessWidget {
   const EventLocationWidget({
@@ -22,12 +25,12 @@ class EventLocationWidget extends StatelessWidget {
           width: 20.w,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: Color(0xff0E6BF0),
+            color: AppColors.primary,
           ),
           child: Icon(
             TablerIcons.map_pin,
             size: 16.w,
-            color: Colors.white,
+            color: AppColors.dark0,
           ),
         ),
         SizedBox(
@@ -38,26 +41,14 @@ class EventLocationWidget extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(
-                fontFamily: "Roboto",
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w500,
-                color: const Color(0xff000000),
-              ),
-              textAlign: TextAlign.left,
+              style: AppTextStyles.base.s10.w500.blackColor,
             ),
             SizedBox(
               height: 2.5.h,
             ),
             Text(
               subtitle,
-              style: TextStyle(
-                fontFamily: "Roboto",
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w400,
-                color: const Color(0xff656565),
-              ),
-              textAlign: TextAlign.left,
+              style: AppTextStyles.base.s10.w400.dark500Color,
             )
           ],
         )

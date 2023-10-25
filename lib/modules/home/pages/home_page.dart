@@ -13,28 +13,27 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    final List<int> list = [1, 2, 3];
     FlutterStatusbarcolor.setStatusBarColor(Colors.black);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
+        bottom: false,
         child: Stack(
           children: [
+            //TODO: Falta hacer el boton de cargar mas eventos...
             ListView(
+              padding: EdgeInsets.only(top: 60.h, bottom: 60.h),
               physics: const BouncingScrollPhysics(),
-              children: list.map(
+              children: List<int>.generate(4, (index) => index).map(
                 (item) {
                   if (item == 2) {
                     return Padding(
-                        padding: EdgeInsets.only(
-                            top: item == 1 ? 60.h : 10.h,
-                            bottom: item == list.length ? 100.h : 10.h),
-                        child: const EventCard(isEvent: false));
+                      padding: EdgeInsets.only(bottom: 14.h),
+                      child: const EventCard(isEvent: false),
+                    );
                   }
                   return Padding(
-                    padding: EdgeInsets.only(
-                        top: item == 1 ? 60.h : 10.h,
-                        bottom: item == list.length ? 100.h : 10.h),
+                    padding: EdgeInsets.only(bottom: 14.h),
                     child: const EventCard(isEvent: true),
                   );
                 },

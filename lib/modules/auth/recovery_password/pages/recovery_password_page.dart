@@ -11,7 +11,9 @@ import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:get/get.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
+import '../../../../core/common/widgets/my_filled_button.dart';
 import '../../../../core/common/widgets/widgets.dart';
+import '../../../../core/theme/app_text_theme.dart';
 
 class RecoveryPasswordPage extends GetView<RecoveryPasswordController> {
   const RecoveryPasswordPage({super.key});
@@ -22,6 +24,7 @@ class RecoveryPasswordPage extends GetView<RecoveryPasswordController> {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         body: SafeArea(
+          bottom: false,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
@@ -45,20 +48,15 @@ class RecoveryPasswordPage extends GetView<RecoveryPasswordController> {
                 SizedBox(height: 80.h),
                 const CustomFormField(hintext: 'Correo electronico'),
                 const Spacer(),
-                CustomFilledButton(
-                  iconData: TablerIcons.chevron_right,
-                  buttonText: "Continuar",
-                  onPressed: () => Get.toNamed(
-                      '${RecoveryPasswordRoutes.recovery}${RecoveryPasswordRoutes.recoveryEntrerCode}'),
-                  style: Theme.of(context).filledButtonTheme.style!.copyWith(
-                        padding: MaterialStatePropertyAll(
-                          EdgeInsets.symmetric(
-                            horizontal: 12.w,
-                            vertical: 10.h,
-                          ),
-                        ),
-                      ),
-                  isDesingInverse: true,
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20.h),
+                  child: MyFilledButton(
+                    text: "Continuar",
+                    onPressed: () => Get.toNamed(
+                        '${RecoveryPasswordRoutes.recovery}${RecoveryPasswordRoutes.recoveryEntrerCode}'),
+                    iconData: TablerIcons.chevron_right,
+                    style: AppTextStyles.base.s12.whiteColor.w500,
+                  ),
                 ),
               ],
             ),

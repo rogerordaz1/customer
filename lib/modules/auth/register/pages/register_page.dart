@@ -8,7 +8,11 @@ import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:get/get.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 
+import '../../../../core/common/widgets/my_filled_button.dart';
 import '../../../../core/common/widgets/widgets.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_theme.dart';
+import '../../../layout/layout.dart';
 
 class RegisterPage extends GetView<RegisterController> {
   const RegisterPage({super.key});
@@ -56,21 +60,12 @@ class RegisterPage extends GetView<RegisterController> {
                     const Spacer(),
                     Padding(
                       padding: EdgeInsets.only(bottom: 50.h),
-                      child: CustomFilledButton(
-                        iconData: TablerIcons.chevron_right,
-                        buttonText: "Continuar",
+                      child: MyFilledButton(
+                        text: "Continuar",
                         onPressed: () => Get.toNamed(
                             '${RegisterRoutes.register}${RegisterRoutes.activateAcount}'),
-                        style:
-                            Theme.of(context).filledButtonTheme.style!.copyWith(
-                                  padding: MaterialStatePropertyAll(
-                                    EdgeInsets.symmetric(
-                                      horizontal: 12.w,
-                                      vertical: 10.h,
-                                    ),
-                                  ),
-                                ),
-                        isDesingInverse: true,
+                        iconData: TablerIcons.chevron_right,
+                        style: AppTextStyles.base.s12.whiteColor.w500,
                       ),
                     ),
                   ],

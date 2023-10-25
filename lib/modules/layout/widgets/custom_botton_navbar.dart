@@ -42,7 +42,7 @@ class CustomBottonNavBar extends StatelessWidget {
                     ? true
                     : false,
                 // isSelected: navBarCubit.state.index == 0 ? true : false,
-                iconData: TablerIcons.home,
+                iconData: TablerIcons.compass,
 
                 onPressed: () => controller.updateSelectedIndex(0),
                 // onPressed: () => navBarCubit.updateIndexNavBar(0),
@@ -73,7 +73,7 @@ class CustomBottonNavBar extends StatelessWidget {
                 isSelected: controller.layoutState.value.selectedIndex == 4
                     ? true
                     : false,
-                iconData: TablerIcons.user_circle,
+                iconData: TablerIcons.settings,
                 onPressed: () => controller.updateSelectedIndex(4),
               ),
             ],

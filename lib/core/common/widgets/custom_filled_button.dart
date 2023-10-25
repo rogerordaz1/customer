@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../theme/app_text_theme.dart';
+
 class CustomFilledButton extends StatelessWidget {
   const CustomFilledButton({
     super.key,
@@ -9,7 +11,6 @@ class CustomFilledButton extends StatelessWidget {
     required this.onPressed,
     required this.style,
     this.textStyle,
-    this.isBackButton,
     this.iconSize,
     this.isDesingInverse = false,
   });
@@ -19,7 +20,7 @@ class CustomFilledButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final ButtonStyle style;
   final TextStyle? textStyle;
-  final bool? isBackButton;
+
   final double? iconSize;
   final bool? isDesingInverse;
 
@@ -28,71 +29,28 @@ class CustomFilledButton extends StatelessWidget {
     return FilledButton(
       style: style,
       onPressed: onPressed,
-      child: isDesingInverse == false
-          ? Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (iconData != null)
-                  Icon(
-                    iconData,
-                    size: iconSize ?? 19.h,
-                  ),
-                isBackButton == null
-                    ? SizedBox(
-                        width: 8.w,
-                      )
-                    : SizedBox(
-                        width: 5.w,
-                      ),
-                Text(
-                  buttonText,
-                  style: textStyle ??
-                      TextStyle(
-                        fontFamily: "Roboto",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                ),
-                isBackButton == null
-                    ? const SizedBox.shrink()
-                    : SizedBox(
-                        width: 5.w,
-                      ),
-              ],
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  buttonText,
-                  style: textStyle ??
-                      TextStyle(
-                        fontFamily: "Roboto",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                ),
-                isBackButton == null
-                    ? const SizedBox.shrink()
-                    : SizedBox(
-                        width: 5.w,
-                      ),
-                isBackButton == null
-                    ? SizedBox(
-                        width: 8.w,
-                      )
-                    : SizedBox(
-                        width: 5.w,
-                      ),
-                if (iconData != null)
-                  Icon(
-                    iconData,
-                    size: iconSize ?? 19.h,
-                  ),
-              ],
+      child: Flex(
+        direction: Axis.horizontal,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (isDesingInverse! == true) ...[
+            Icon(iconData),
+            SizedBox(width: 8.w),
+          ],
+          Flexible(
+            child: Text(
+              buttonText,
+              softWrap: true,
+              overflow: TextOverflow.ellipsis,
+              style: textStyle ?? AppTextStyles.base.w500,
             ),
+          ),
+          if (isDesingInverse! == false) ...[
+            SizedBox(width: 8.w),
+            Icon(iconData),
+          ]
+        ],
+      ),
     );
   }
 }
