@@ -1,7 +1,6 @@
 import 'package:app/core/common/widgets/my_filled_button.dart';
 import 'package:app/core/theme/app_text_theme.dart';
 import 'package:app/modules/home/routes/home_routes.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

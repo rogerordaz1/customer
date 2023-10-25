@@ -7,6 +7,7 @@ class AppColors {
   static const Color secondGradientBlue = Color(0xff0948A3);
   static const Color firstGradientOrange = Color(0xffFE9500);
   static const Color secondGradientOrange = Color(0xffEC5E20);
+  static const Color compartirColorBlack = Color(0xff1A1A1A);
 
   static const Color dark50 = Color(0xffEEEEEE);
   static const Color dark100 = Color(0xffDADADA);

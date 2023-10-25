@@ -1,5 +1,8 @@
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../theme/app_colors.dart';
 
 class EventTextName extends StatelessWidget {
   const EventTextName({
@@ -11,17 +14,13 @@ class EventTextName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = TextStyle(
-      fontFamily: "Roboto",
-      fontSize: 14.sp,
-      fontWeight: FontWeight.w500,
-      color: const Color(0xff1a1a1a),
-    );
+    final style = AppTextStyles.base.s14.w500
+        .copyWith(color: AppColors.compartirColorBlack);
 
     return Text(
       title,
       style: style,
-      textAlign: TextAlign.left,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

@@ -18,3 +18,7 @@ export './event_detail/event_detail_full_widget.dart';
 export './event_detail/event_detail_map_location_image_widget.dart';
 
 export './event_detail/event_details_images_section_widget.dart';
+
+export './event_options/events_more_options_widgets.dart';
+
+export './event_options/option_modal_item.dart';

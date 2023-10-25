@@ -1,4 +1,6 @@
 import 'package:app/core/common/widgets/custom_filled_button.dart';
+import 'package:app/core/common/widgets/my_filled_button.dart';
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabler_icons/tabler_icons.dart';
@@ -10,25 +12,13 @@ class EventDetailCheckInButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    //TODO: Implementar los estilos en el tema.
-    final style = ButtonStyle(
-      padding: MaterialStatePropertyAll(
-          EdgeInsets.symmetric(horizontal: 28.w, vertical: 6.h)),
-      backgroundColor: const MaterialStatePropertyAll(Color(0xff0E6BF0)),
-      alignment: Alignment.center,
-      shape: MaterialStatePropertyAll(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-      ),
-    );
-
-    return CustomFilledButton(
+    return MyFilledButton(
+      height: 35.h,
       iconData: TablerIcons.ticket,
-      buttonText: "Reservar",
+      text: "Reservar",
       onPressed: () {},
-      style: style,
+      isDesingInverse: true,
+      style: AppTextStyles.base.s14.w500.whiteColor,
     );
   }
 }

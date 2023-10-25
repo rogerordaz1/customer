@@ -1,3 +1,4 @@
+import 'package:app/core/utils/botton_sheets/botton_sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tabler_icons/tabler_icons.dart';
@@ -42,8 +43,10 @@ class EventAuthorImgAndName extends StatelessWidget {
         ),
         //? Revisar despues que se va a hacer con los 3 punticos..
         if (isIconShowing == true)
-          const Icon(
-            TablerIcons.dots_vertical,
+          IconButton(
+            icon: const Icon(TablerIcons.dots_vertical),
+            onPressed: () =>
+                BottonSheets.showMoreOptionsBottonSheet(context: context),
           )
       ],
     );

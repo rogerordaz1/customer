@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/widgets/widgets.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../widgets.dart';
 
 class EventCard extends StatelessWidget {
@@ -37,31 +38,33 @@ class EventCard extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 16.w),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          height: 200.h,
+          height: 210.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(12.r),
               bottomRight: Radius.circular(12.r),
             ),
-            color: Colors.white,
+            color: AppColors.dark0,
           ),
-          width: double.infinity,
+          width: MediaQuery.sizeOf(context).width,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const EventTextName(title: 'Paisajes sin nombre'),
-              SizedBox(height: 5.h),
+              const EventTextName(
+                  title:
+                      'Festival Internacional del Nuevo Cine Latinoamericano'),
               const EventAuthorImgAndName(
                   authorImg: 'assets/image1.png', authorName: 'Enrique Casas'),
-              SizedBox(height: 10.h),
+              SizedBox(
+                height: 10.h,
+              ),
               const EventLocationWidget(
                 title: 'Multiples locaciones',
                 subtitle: 'Ciudad de La Habana',
               ),
-              SizedBox(height: 10.h),
+              const Spacer(),
               EventDateAndTimeWidget(isEvent: isEvent),
-              SizedBox(height: 10.h),
+              const Spacer(),
               EventActionButtonWidget(isEvent: isEvent),
             ],
           ),
