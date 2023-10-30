@@ -1,3 +1,4 @@
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,12 +33,8 @@ class CustomOutlineButton extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             buttonText,
-            style: TextStyle(
-              fontFamily: "Roboto",
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: const Color(0xff0e6bf0),
-            ),
+            textAlign: TextAlign.center,
+            style: AppTextStyles.base.s12.w500.primaryColor,
           )
         ],
       ),

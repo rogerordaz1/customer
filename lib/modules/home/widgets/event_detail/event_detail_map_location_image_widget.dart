@@ -1,6 +1,8 @@
+import 'package:app/core/common/widgets/my_filled_button.dart';
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabler_icons/tabler_icons.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 import '../../../../core/common/widgets/widgets.dart';
 
@@ -30,27 +32,12 @@ class EventDetailMapLocationImageWidget extends StatelessWidget {
           margin: EdgeInsets.all(8.r),
           height: 35.h,
           width: 150.w,
-          child: CustomFilledButton(
-            iconData: TablerIcons.map_2,
-            buttonText: 'Ver en el Mapa',
+          child: MyFilledButton(
             onPressed: () {},
-            style: ButtonStyle(
-              padding: MaterialStatePropertyAll(
-                  EdgeInsets.symmetric(horizontal: 18.w, vertical: 6.h)),
-              backgroundColor:
-                  const MaterialStatePropertyAll(Color(0xff0E6BF0)),
-              alignment: Alignment.center,
-              shape: MaterialStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40.r),
-                ),
-              ),
-            ),
-            textStyle: TextStyle(
-              fontFamily: "Roboto",
-              fontSize: 12.5.sp,
-              fontWeight: FontWeight.w500,
-            ),
+            text: 'Ver en el Mapa',
+            iconData: TablerIcons.map_2,
+            style: AppTextStyles.base.s12.w500.whiteColor,
+            isDesingInverse: true,
           ),
         )
       ],

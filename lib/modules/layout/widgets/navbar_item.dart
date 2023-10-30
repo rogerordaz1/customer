@@ -18,8 +18,8 @@ class NavBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return isSelected == true
         ? Container(
-            height: 36.h,
-            width: 36.w,
+            height: 42.h,
+            width: 42.w,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white,
@@ -35,11 +35,11 @@ class NavBarItem extends StatelessWidget {
                     isSelected: isSelected!,
                   ),
           )
-        : GestureDetector(
+        : InkWell(
             onTap: onPressed,
             child: SizedBox(
-              height: 36.h,
-              width: 36.w,
+              height: 42.h,
+              width: 42.w,
               child: isBell == false
                   ? Icon(
                       iconData,
@@ -79,8 +79,8 @@ class CustomBadge extends StatelessWidget {
             right: 0,
             top: 3,
             child: Container(
-              height: 12,
-              width: 12,
+              height: 10.h,
+              width: 10.w,
               decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.white,

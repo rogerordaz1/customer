@@ -1,7 +1,7 @@
 import 'package:app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tabler_icons/tabler_icons.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 class EventDetailAboutThisEventWidget extends StatefulWidget {
   const EventDetailAboutThisEventWidget({

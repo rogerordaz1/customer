@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_theme.dart';
 
@@ -48,24 +47,29 @@ class OptionModalItemWidget extends StatelessWidget {
             SizedBox(
               width: 8.w,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: AppTextStyles.base.s14.w500.blackColor,
-                ),
-                SizedBox(
-                  height: 2.5.h,
-                ),
-                Text(
-                  subtitle,
-                  style: AppTextStyles.base.w400
-                      .copyWith(fontSize: 11.sp)
-                      .copyWith(color: const Color(0xFF232323)),
-                )
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextStyles.base.s14.w500.blackColor,
+                  ),
+                  SizedBox(
+                    height: 2.5.h,
+                  ),
+                  Text(
+                    subtitle,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.base.w400
+                        .copyWith(fontSize: 11.sp)
+                        .copyWith(
+                          color: const Color(0xFF232323),
+                        ),
+                  )
+                ],
+              ),
             )
           ],
         ),

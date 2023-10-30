@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
-import 'package:tabler_icons/tabler_icons.dart';
-
-import '../../theme/app_colors.dart';
-import 'widgets.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:app/core/theme/themes.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({
@@ -14,19 +10,11 @@ class CustomBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100.w,
-      child: CustomFilledButton(
-        iconData: TablerIcons.chevron_left,
-        buttonText: 'Volver',
-        iconSize: 20.h,
-        style: Theme.of(context).filledButtonTheme.style!,
+    return FilledButton.icon(
+        style: FilledButton.styleFrom(
+            padding: const EdgeInsets.fromLTRB(8, 4, 16, 8)),
         onPressed: () => Get.back(),
-        textStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
-              color: AppColors.dark0,
-            ),
-        isDesingInverse: true,
-      ),
-    );
+        icon: const Icon(TablerIcons.chevron_left, color: AppColors.white),
+        label: Text('Volver', style: AppTextStyles.base.s14.w500));
   }
 }

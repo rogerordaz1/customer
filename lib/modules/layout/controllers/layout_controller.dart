@@ -7,6 +7,4 @@ class LayoutController extends GetxController {
   void updateSelectedIndex(int value) {
     layoutState(layoutState.value.copyWith(selectedIndex: value));
   }
-
-
 }

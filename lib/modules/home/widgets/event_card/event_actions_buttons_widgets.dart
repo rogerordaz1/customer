@@ -1,11 +1,11 @@
-import 'package:app/core/common/widgets/my_filled_button.dart';
 import 'package:app/core/theme/app_colors.dart';
 import 'package:app/core/theme/app_text_theme.dart';
 import 'package:app/core/utils/botton_sheets/botton_sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:tabler_icons/tabler_icons.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/common/widgets/widgets.dart';
 import '../../../../core/utils/dialogs/dialogs.dart';
@@ -37,8 +37,15 @@ class EventActionButtonWidget extends StatelessWidget {
                   .outlinedButtonTheme
                   .style!
                   .copyWith(padding: outlineBtnPadding),
-              onPressed: () => BottonSheets.showEventDetailBottomSheet(
-                  context: context, isEvent: isEvent),
+              onPressed: () {
+                Get.bottomSheet(
+                  AppDraggable(isEvent: isEvent),
+                  isScrollControlled: true,
+                  barrierColor: Colors.black.withOpacity(.5),
+                );
+                // BottonSheets.showEventDetailBottomSheet(
+                //     context: context, isEvent: isEvent);
+              },
             ),
           ),
           SizedBox(width: 10.w),

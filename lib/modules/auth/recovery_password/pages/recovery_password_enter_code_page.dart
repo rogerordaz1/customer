@@ -1,15 +1,12 @@
 import 'package:app/core/theme/app_colors.dart';
 import 'package:app/modules/auth/register/controllers/register_controller.dart';
-
 import 'package:app/modules/auth/widgets/custom_register_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:get/get.dart';
 import 'package:sms_autofill/sms_autofill.dart';
-import 'package:tabler_icons/tabler_icons.dart';
-
-import '../../../../core/common/widgets/my_filled_button.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import '../../../../core/common/widgets/widgets.dart';
 import '../../../../core/theme/app_text_theme.dart';
 
@@ -24,6 +21,7 @@ class RecoveryPasswordEnterCodePage extends GetView<RegisterController> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: SafeArea(
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
@@ -62,7 +60,10 @@ class RecoveryPasswordEnterCodePage extends GetView<RegisterController> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5.w),
                     child: PinFieldAutoFill(
+                      keyboardType: TextInputType.number,
                       decoration: CirclePinDecoration(
+                          obscureStyle: ObscureStyle(isTextObscure: true),
+                          errorTextStyle: AppTextStyles.base,
                           gapSpace: 10,
                           bgColorBuilder:
                               const FixedColorBuilder(AppColors.dark0),

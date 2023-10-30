@@ -1,0 +1,16 @@
+export 'bindings/change_pass_binding.dart';
+export 'bindings/check_code_binding.dart';
+export 'bindings/edit_perfil_binding.dart';
+export 'bindings/settings_binding.dart';
+export 'bindings/soporte_binding.dart';
+export 'controllers/change_pass_controller.dart';
+export 'controllers/check_code_controller.dart';
+export 'controllers/edit_perfil_controller.dart';
+export 'controllers/settings_controller.dart';
+export 'controllers/soporte_controller.dart';
+export 'pages/change_pass_page.dart';
+export 'pages/check_code_page.dart';
+export 'pages/edit_perfil_page.dart';
+export 'pages/settings_page.dart';
+export 'pages/soporte_page.dart';
+export 'settings_routes.dart';

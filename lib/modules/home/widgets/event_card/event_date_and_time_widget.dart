@@ -1,27 +1,23 @@
+import 'package:app/core/theme/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EventDateAndTimeWidget extends StatelessWidget {
-  const EventDateAndTimeWidget({
-    super.key,
-    required this.isEvent,
-  });
+  const EventDateAndTimeWidget({super.key, required this.isEvent});
 
   final bool isEvent;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 5.w),
-          width: 175.w,
-          height: 35.h,
+          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.r)),
-            color: const Color.fromRGBO(238, 238, 238, 1),
+            borderRadius: BorderRadius.all(Radius.circular(8.r)),
+            color: AppColors.dark50,
           ),
           child: const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,33 +29,25 @@ class EventDateAndTimeWidget extends StatelessWidget {
             ],
           ),
         ),
-        if (isEvent == false)
+        if (!isEvent)
           Container(
-            width: 50.w,
-            height: 35.h,
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.r)),
-              color: const Color.fromRGBO(238, 238, 238, 1),
+              color: AppColors.dark50,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "\$50.00",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineMedium!
-                      .copyWith(fontWeight: FontWeight.w400),
+                  style: AppTextStyles.base.w500.primaryColor.s12,
                   textAlign: TextAlign.left,
                 ),
                 Text(
                   "/Entrada",
-                  style: TextStyle(
-                    fontFamily: "Roboto",
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xff848484),
-                  ),
+                  style: AppTextStyles.base.s10.w400.dark500Color,
                 )
               ],
             ),
@@ -77,41 +65,21 @@ class DateAndTimeWidgetItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           "16",
-          style: TextStyle(
-            fontFamily: "Roboto",
-            fontSize: 26.sp,
-            fontWeight: FontWeight.w400,
-            color: const Color(0xff0e6bf0),
-          ),
-          textAlign: TextAlign.left,
+          style: AppTextStyles.base.s22.w400.primaryColor,
         ),
-        SizedBox(width: 8.w),
+        SizedBox(width: 4.w),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Dic.",
-              style: TextStyle(
-                fontFamily: "Roboto",
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w500,
-                color: const Color(0xff000000),
-              ),
-              textAlign: TextAlign.left,
-            ),
+            Text("Dic.", style: AppTextStyles.base.w500.s10),
             Text(
               "09:00pm",
-              style: TextStyle(
-                fontFamily: "Roboto",
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w400,
-                color: const Color(0xff848484),
-              ),
-              textAlign: TextAlign.left,
+              style: AppTextStyles.base.s10.w400.dark500Color,
             )
           ],
         )
@@ -127,6 +95,10 @@ class ItemBreaker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(width: 1.w, height: 23.h, color: const Color(0xffC1C1C1));
+    return Container(
+        margin: EdgeInsets.symmetric(horizontal: 4.w),
+        width: 1.w,
+        height: 23.h,
+        color: const Color(0xffC1C1C1));
   }
 }

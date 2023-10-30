@@ -1,19 +1,13 @@
+import 'package:app/core/common/widgets/widgets.dart';
+import 'package:app/core/theme/themes.dart';
 import 'package:app/modules/auth/recovery_password/controllers/recovery_password_controller.dart';
 import 'package:app/modules/auth/recovery_password/routes/recovery_password_routes.dart';
-import 'package:app/modules/auth/widgets/custom_back_buttom.dart';
-import 'package:app/modules/auth/widgets/custom_login_buttom.dart';
-import 'package:app/modules/auth/widgets/custom_login_fields.dart';
 import 'package:app/modules/auth/widgets/custom_register_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:get/get.dart';
-import 'package:tabler_icons/tabler_icons.dart';
-
-import '../../../../core/common/widgets/my_filled_button.dart';
-import '../../../../core/common/widgets/widgets.dart';
-import '../../../../core/theme/app_text_theme.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 class RecoveryPasswordPage extends GetView<RecoveryPasswordController> {
   const RecoveryPasswordPage({super.key});
@@ -46,7 +40,10 @@ class RecoveryPasswordPage extends GetView<RecoveryPasswordController> {
                   isSubtitle: true,
                 ),
                 SizedBox(height: 80.h),
-                const CustomFormField(hintext: 'Correo electronico'),
+                const AppTextField(
+                  hintText: 'Correo electronico',
+                  keyboardType: TextInputType.emailAddress,
+                ),
                 const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(bottom: 20.h),

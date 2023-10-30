@@ -8,8 +8,7 @@ export './event_detail/event_detail_description_widget.dart';
 
 export './event_detail/event_details_widget.dart';
 
-
-
+export './custom_navbar/search_textfield.dart';
 
 export 'event_detail/event_detail_about_this_event_widget.dart';
 
@@ -22,3 +21,5 @@ export './event_detail/event_details_images_section_widget.dart';
 export './event_options/events_more_options_widgets.dart';
 
 export './event_options/option_modal_item.dart';
+
+export './custom_navbar/filters_pill.dart';

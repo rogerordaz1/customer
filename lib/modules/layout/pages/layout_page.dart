@@ -1,4 +1,8 @@
 import 'package:app/modules/home/home.dart';
+import 'package:app/modules/my_reservations/my_reservation.dart';
+import 'package:app/modules/notifications/notification_page.dart';
+import 'package:app/modules/search/pages/search_page.dart';
+import 'package:app/modules/settings/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -22,12 +26,12 @@ class LayoutPage extends GetView<LayoutController> {
             return IndexedStack(
               index: controller.layoutState.value.selectedIndex,
               alignment: Alignment.bottomCenter,
-              children: [
-                const HomePage(),
-                Container(color: Colors.red),
-                Container(color: Colors.blue),
-                Container(color: Colors.green),
-                Container(color: Colors.yellow),
+              children: const [
+                HomePage(),
+                SearchPage(),
+                MyReservationPage(),
+                NotificationPage(),
+                SettingsPage()
               ],
             );
           }),

@@ -15,7 +15,7 @@ class EventDetailImagesSectionWidget extends StatelessWidget {
           .map(
             (item) => Container(
               width: MediaQuery.of(context).size.width * 0.80,
-              margin: EdgeInsets.only(left: 10.w),
+              margin: EdgeInsets.only(right: 4.w),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(12)),
                 image: DecorationImage(

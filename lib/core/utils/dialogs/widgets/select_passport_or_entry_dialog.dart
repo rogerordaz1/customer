@@ -1,7 +1,6 @@
-import 'package:app/core/common/widgets/my_filled_button.dart';
+import 'package:flutter/material.dart';
 import 'package:app/core/theme/app_text_theme.dart';
 import 'package:app/modules/home/routes/home_routes.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -36,14 +35,18 @@ class SelectPassportOrEntryDialog extends StatelessWidget {
       ),
       actionsPadding: pading,
       actions: [
-        CustomOutlineButton(
-          buttonText: 'Una entrada',
-          onPressed: () {
-            Get.back();
-            Get.toNamed("${HomeRoutes.home}${HomeRoutes.showList}");
-          },
-          style: Theme.of(context).outlinedButtonTheme.style!,
+        SizedBox(
+          height: 30.h,
+          child: CustomOutlineButton(
+            buttonText: 'Una entrada',
+            onPressed: () {
+              if (Get.isDialogOpen!) Get.back();
+              Get.toNamed("${HomeRoutes.home}${HomeRoutes.showList}");
+            },
+            style: Theme.of(context).outlinedButtonTheme.style!,
+          ),
         ),
+        SizedBox(height: 6.h),
         MyFilledButton(
           text: '     Un Pasaporte',
           style: AppTextStyles.base.s12.whiteColor.w500,

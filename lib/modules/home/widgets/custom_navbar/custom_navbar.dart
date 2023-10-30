@@ -1,19 +1,18 @@
+import 'package:app/core/theme/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:tabler_icons/tabler_icons.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../widgets.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
-    super.key,
-  });
+  const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -24,11 +23,20 @@ class CustomAppBar extends StatelessWidget {
                 barrierDismissible: true,
                 barrierColor: Colors.black.withOpacity(0.5),
                 barrierLabel: 'Cerrar diálogo',
-                transitionDuration: const Duration(milliseconds: 100),
-                pageBuilder: (BuildContext context, Animation animation,
-                    Animation secondaryAnimation) {
-                  return const CustomFilter();
+                transitionDuration: const Duration(milliseconds: 200),
+                transitionBuilder: (_, animation, __, child) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: Transform(
+                        transform: Matrix4.translationValues(
+                          0.0,
+                          30 * -(1.0 - animation.value),
+                          0.0,
+                        ),
+                        child: child),
+                  );
                 },
+                pageBuilder: (_, animation, __) => const CustomFilter(),
               );
             },
             child: Stack(
@@ -58,7 +66,7 @@ class CustomAppBar extends StatelessWidget {
                       ),
                       shape: BoxShape.circle,
                     ),
-                    child: Badge(
+                    child: const Badge(
                       backgroundColor: AppColors.primary,
                     ),
                   ),
@@ -83,150 +91,58 @@ class CustomAppBar extends StatelessWidget {
 }
 
 class CustomFilter extends StatelessWidget {
-  const CustomFilter({
-    super.key,
-  });
+  const CustomFilter({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SafeArea(
-          child: Container(
-            padding: EdgeInsets.only(top: 15.h, bottom: 15.h),
-            width: MediaQuery.of(context).size.width,
-            height: 170.h,
-            color: const Color.fromRGBO(255, 255, 255, 1),
+    final Map<String, IconData> map = {
+      'Fecha': TablerIcons.calendar_due,
+      'Categoria': TablerIcons.category_2,
+      'Artista': TablerIcons.palette,
+      'Lugar': TablerIcons.plane,
+    };
+
+    return SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            padding: EdgeInsets.only(top: 16.h, bottom: 16.h),
+            height: 165.h,
             child: Column(
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 15.h),
                   child: const DialogFilterHeader(),
                 ),
-                SizedBox(height: 16.h),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(right: 15.h, left: 15.h),
                   child: const FilterSearchWidget(),
                 ),
-                SizedBox(height: 8.h),
+                const Spacer(),
                 SizedBox(
                   height: 35.h,
                   child: ListView(
                     physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    children: [
-                      SizedBox(width: 15.w),
-                      const FilterPill(
-                        text: 'Fecha',
-                        iconData: TablerIcons.calendar_due,
+                    children: List.generate(
+                      map.length,
+                      (index) => Padding(
+                        padding:
+                            EdgeInsets.only(left: index == 0 ? 16.w : 10.w),
+                        child: FilterPill(
+                          text: map.keys.elementAt(index),
+                          iconData: map.values.elementAt(index),
+                        ),
                       ),
-                      SizedBox(width: 8.w),
-                      const FilterPill(
-                        text: 'Categoria',
-                        iconData: TablerIcons.category_2,
-                      ),
-                      SizedBox(width: 8.w),
-                      const FilterPill(
-                        text: 'Artista',
-                        iconData: TablerIcons.palette,
-                      ),
-                      SizedBox(width: 8.w),
-                      const FilterPill(
-                        text: 'Artista',
-                        iconData: TablerIcons.palette,
-                      ),
-                    ],
+                    ),
                   ),
-                )
+                ),
               ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class FilterPill extends StatelessWidget {
-  const FilterPill({
-    super.key,
-    required this.text,
-    required this.iconData,
-  });
-
-  final String text;
-  final IconData iconData;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w),
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(238, 238, 238, 1),
-        borderRadius: BorderRadius.all(
-          Radius.circular(30.r),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(iconData),
-          SizedBox(width: 8.w),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 12.sp,
-              color: Colors.black,
-              decoration: TextDecoration.none,
-              fontWeight: FontWeight.bold,
-              letterSpacing: -1,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class FilterSearchWidget extends StatelessWidget {
-  const FilterSearchWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 45.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(238, 238, 238, 1),
-        borderRadius: BorderRadius.all(
-          Radius.circular(30.r),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            'Hinted search text',
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: Colors.black,
-              fontStyle: FontStyle.normal,
-              decoration: TextDecoration.none,
-              fontWeight: FontWeight.normal,
-              letterSpacing: -1,
-            ),
-          ),
-          Container(
-            height: 30.h,
-            width: 30.w,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              TablerIcons.search,
-              size: 18.w,
             ),
           ),
         ],
@@ -253,8 +169,9 @@ class DialogFilterHeader extends StatelessWidget {
                 height: 30.h,
                 width: 30.w,
                 decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color.fromRGBO(238, 238, 238, 1)),
+                  shape: BoxShape.circle,
+                  color: AppColors.dark50,
+                ),
                 child: Icon(
                   TablerIcons.chevron_up,
                   size: 22.w,

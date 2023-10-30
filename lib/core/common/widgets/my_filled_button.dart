@@ -13,7 +13,7 @@ class MyFilledButton extends StatelessWidget {
     this.iconData,
     this.colors,
     this.isDesingInverse = false,
-    this.textColor = AppColors.dark0,
+    this.textColor = AppColors.white,
     this.style,
     this.padding,
     this.height,
@@ -33,7 +33,7 @@ class MyFilledButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: height ?? 40.h,
+        height: height ?? 35.h,
         // padding:
         //     padding ?? EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
         decoration: BoxDecoration(
@@ -56,39 +56,24 @@ class MyFilledButton extends StatelessWidget {
               direction: Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (isDesingInverse) ...[
+                if (isDesingInverse && iconData != null) ...[
                   iconData != null
-                      ? Icon(
-                          iconData,
-                          color: onPressed == null
-                              ? AppColors.dark600
-                              : AppColors.dark0,
-                        )
+                      ? Icon(iconData, color: textColor)
                       : const SizedBox.shrink(),
-                  SizedBox(width: 8.w),
                 ],
+                SizedBox(width: 8.w),
                 Flexible(
-                  child: Text(
-                    text,
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: onPressed == null
-                        ? AppTextStyles.base.w500
-                            .copyWith(color: AppColors.dark600)
-                            .s12
-                        : style ??
-                            AppTextStyles.base.w500.copyWith(color: textColor),
-                  ),
+                  child: Text(text,
+                      softWrap: true,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style:
+                          AppTextStyles.base.w600.copyWith(color: textColor)),
                 ),
-                if (!isDesingInverse) ...[
+                if (!isDesingInverse && iconData != null) ...[
                   SizedBox(width: 8.w),
                   iconData != null
-                      ? Icon(
-                          iconData,
-                          color: onPressed == null
-                              ? AppColors.dark600
-                              : AppColors.dark0,
-                        )
+                      ? Icon(iconData, color: textColor)
                       : const SizedBox.shrink(),
                 ]
               ],

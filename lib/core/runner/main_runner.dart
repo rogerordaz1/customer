@@ -1,6 +1,7 @@
 import 'dart:async';
-import 'dart:io';
+// import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 //import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 typedef AppBuilder = Widget Function();
@@ -17,8 +18,11 @@ mixin MainRunner {
     _runZoned(
       () async {
         WidgetsFlutterBinding.ensureInitialized();
+        // DB Local
+        await Hive.initFlutter();
+        await Hive.openBox('settings');
 
-        HttpOverrides.global = MyHttpOverrides();
+        // HttpOverrides.global = MyHttpOverrides();
 
         //  await dotenv.load(fileName: ".env");
         runApp(appBuilder());
@@ -27,11 +31,11 @@ mixin MainRunner {
   }
 }
 
-class MyHttpOverrides extends HttpOverrides {
-  @override
-  HttpClient createHttpClient(SecurityContext? context) {
-    HttpClient client = super.createHttpClient(context);
-    client.badCertificateCallback = (cert, host, port) => true;
-    return client;
-  }
-}
+// class MyHttpOverrides extends HttpOverrides {
+//   @override
+//   HttpClient createHttpClient(SecurityContext? context) {
+//     HttpClient client = super.createHttpClient(context);
+//     client.badCertificateCallback = (cert, host, port) => true;
+//     return client;
+//   }
+// }

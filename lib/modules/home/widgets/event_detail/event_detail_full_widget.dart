@@ -1,3 +1,4 @@
+import 'package:app/core/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -159,13 +160,15 @@ class ShowCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Vampiros en La Habana',
-                  style: TextStyle(
-                    color: const Color(0xFF1A1A1A),
-                    fontSize: 14.sp,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w500,
+                Expanded(
+                  child: Text(
+                    'Vampiros en La Habana',
+                    style: TextStyle(
+                      color: const Color(0xFF1A1A1A),
+                      fontSize: 14.sp,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -196,17 +199,15 @@ class EventDetailMapLocationSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextStyle style = AppTextStyles.base.s12.w500
+        .copyWith(color: AppColors.compartirColorBlack);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Ubicacion en el mapa',
-          style: TextStyle(
-            color: Color(0xFF1A1A1A),
-            fontSize: 14,
-            fontFamily: 'Roboto',
-            fontWeight: FontWeight.w500,
-          ),
+          style: style,
         ),
         SizedBox(height: 16.h),
         const EventDetailMapLocationImageWidget(),

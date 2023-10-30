@@ -1,0 +1,14 @@
+export 'auth_provider.dart';
+export 'billboard_provider.dart';
+export 'category_provider.dart';
+export 'events_provider.dart';
+export 'map_provider.dart';
+export 'passport_event_provider.dart';
+export 'passport_provider.dart';
+export 'payment_provider.dart';
+export 'place_provider.dart';
+export 'show_provider.dart';
+export 'snack_provider.dart';
+export 'ticket_provider.dart';
+export 'ticket_passport_provider.dart';
+export 'user_provider.dart';
